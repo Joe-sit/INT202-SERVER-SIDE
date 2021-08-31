@@ -33,10 +33,13 @@
                 <input type="number" class="form-control" id="gpax" name="gpax"
                        min="0" max="4.0" step="0.05">
             </div>
-            <input type="submit" value="Save">
+            <input type="submit" value="Save"> <br>
+            <a href="index.jsp">[ Back to index ]</a>
         </form>
+
     </div>
+
 </div>
-<a href="index.jsp">[ Back to index ]</a>
+
 </body>
 </html>

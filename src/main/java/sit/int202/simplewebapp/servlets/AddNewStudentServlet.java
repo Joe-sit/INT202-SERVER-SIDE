@@ -28,7 +28,9 @@ public class AddNewStudentServlet extends HttpServlet {
         Student student = new Student(Integer.valueOf(id), name, Double.valueOf(gpax));
         StudentRepository studentRepository = new StudentRepository();
         studentRepository.save(student);
-        getServletContext().getRequestDispatcher("/index.jsp").forward(request,response);
+        //getServletContext().getRequestDispatcher("/index.jsp").forward(request,response);
+        request.setAttribute("student",student);
+        getServletContext().getRequestDispatcher("/StudentInfo.jsp").forward(request,response);
 
     }
 }

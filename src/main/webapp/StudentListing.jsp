@@ -1,11 +1,4 @@
-<%@ page import="sit.int202.simplewebapp.models.Student" %>
-<%@ page import="java.util.Collection" %><%--
-  Created by IntelliJ IDEA.
-  User: User
-  Date: 8/24/2021
-  Time: 8:17 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -17,17 +10,14 @@
 <div class="container">
     <p class="h1">Student Listing ::</p>
     <div class="row">
-        <%
-            Collection<Student> students = (Collection<Student>) request.getAttribute("students");
-            int i = 1;
-            String bg = null;
-            for(Student st : students) {%>
-        <div class="col-2 p-2 m-2 border border-secondary <%=bg%>">
-            <div>Id: <%= st.getId() %></div>
-            <div>Name: <%= st.getName()%></div>
-            <div>gpax: <%= st.getGpax()%></div>
+        <c:forEach items="${students}" var="student" varStatus="vs">
+        <div class="col-2 p-2 m-2 border border-secondary
+            ${vs.count%5==1 || vs.count%5==3 ? 'bg-primary' : 'bg-light'}">
+            <div>Id: ${student.id}</div>
+            <div>Name:${student.name}</div>
+            <div>gpax: ${student.gpax}</div>
         </div>
-        <%}%>
+        </c:forEach>
     </div>
 </div>
 </body>

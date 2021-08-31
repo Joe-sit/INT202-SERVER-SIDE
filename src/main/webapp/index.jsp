@@ -12,7 +12,7 @@
 <br>
 <a href="student-list">Student List</a>
 <br>
-<a href="add-new-student">Add Student</a>
+<a href="StudentForm.jsp">Add Student</a>
 <br>
 <a href="#">Search Student</a>
 <br>
